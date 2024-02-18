@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTMX Example</title>
+    <!-- this is from htmx docs -->
+    <script src="https://unpkg.com/htmx.org@1.9.10" integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- this target will render the response text from the request -->
+    <div id="data-container" hx-swap="innerHTML"></div>
+    <!-- this button will trigger the request when clicked and send to the target -->
+    <button hx-get="/pokemon/1" hx-trigger="click" hx-target="#data-container">
+        Load Bulbasaur
+    </button>
+    <!-- TODO: change input submission method to be an input bar so the user can type whatever ID of a pokemon they want -->
+    <!-- TODO: add tailwind somehow -->
+</body>
+</html>
