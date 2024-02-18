@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTMX Example</title>
     <!-- this is from htmx docs -->
-    <script src="https://unpkg.com/htmx.org@1.9.10" integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC" crossorigin="anonymous"></script>
+    <script src="./htmx.min.js"></script>
+    <!-- <script src="https://unpkg.com/htmx.org@1.9.10" integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC" crossorigin="anonymous"></script> -->
 </head>
 <body>
     <!-- this target will render the response text from the request -->
@@ -16,5 +17,10 @@
     </button>
     <!-- TODO: change input submission method to be an input bar so the user can type whatever ID of a pokemon they want -->
     <!-- TODO: add tailwind somehow -->
+    <br />
+    <div id="data-container2" hx-swap="outerHTML"></div>
+    <!-- this button will trigger the request when clicked and send to the target -->
+    <input hx-trigger="input" type="text" id="user-input" hx-get="/pokemon/" placeholder="Enter your data"
+        hx-target="#data-container2" />
 </body>
 </html>
